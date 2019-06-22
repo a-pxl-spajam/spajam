@@ -12,6 +12,7 @@ public class Cracker : DecorateObj, IDragHandler, IDropHandler
 
   void Start()
   {
+    baseLocalPos = GetComponent<RectTransform>().localPosition;
   }
 
   void Update()
@@ -20,6 +21,7 @@ public class Cracker : DecorateObj, IDragHandler, IDropHandler
 
   public void OnDrag(PointerEventData data)
   {
+    Info.instance.SetDecorateObj(gameObject);
     (transform as RectTransform).position = data.position;
 
     var cake = EditorManager.instance.Cake;
@@ -28,6 +30,12 @@ public class Cracker : DecorateObj, IDragHandler, IDropHandler
     pos.y = 0;
     pos = Vector3.Scale(pos, new Vector3(1 / cake.rect.width, 0, 1 / cake.rect.height));
     particle.position = pos;
+    var inputFields = Info.instance.GetPosInputFields();
+    string x, y, z;
+    var localPos = (transform.localPosition - baseLocalPos);
+    inputFields[0].text = "" + localPos.x;
+    inputFields[1].text = "" + localPos.y;
+    inputFields[2].text = "" + localPos.z;
   }
 
   public void OnDrop(PointerEventData data)
