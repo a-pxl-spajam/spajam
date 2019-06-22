@@ -57,7 +57,7 @@ public class CameraScript : MonoBehaviour
     {
 #if !UNITY_EDITOR
         return(AVAuthorizationStatus)Enum.ToObject(
-                                    typeof(AVAuthorizationS),_HasCameraPermission());
+                                    typeof(AVAuthorizationStatus),_HasCameraPermission());
 #endif
         return AVAuthorizationStatus.Authorized;
 
