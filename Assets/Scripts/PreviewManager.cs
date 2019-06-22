@@ -11,9 +11,9 @@ namespace EffectsPreview
     private Transform _effectRoot;
 
     [SerializeField]
-    private List<Pair> _effectPair;
+    private EffectList _effectPair;
 
-    public List<Pair> EffectPair => _effectPair;
+    public EffectList EffectPair => _effectPair;
 
     [SerializeField]
     private float scale;
@@ -51,7 +51,7 @@ namespace EffectsPreview
       decorations.ForEach(decoration =>
       {
         // idをもとにEffectのprefabを返す
-        var obj = decoration.Decorate(_effectPair);
+        var obj = decoration.Decorate(_effectPair.EffectPair);
         obj.transform.position *= scale;
         obj.transform.position += _effectRoot.position;
       });

@@ -477,17 +477,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _effectRoot: {fileID: 198863744}
-  _effectPair:
-  - _id: 1
-    _effect: {fileID: 184772, guid: 27ccdd0f3c4344565b9583bc54c7c768, type: 3}
-  - _id: 2
-    _effect: {fileID: 115032, guid: c4c676882c56a429b9fb9b5130f39f8a, type: 3}
-  - _id: 3
-    _effect: {fileID: 1692883876216150693, guid: 5a1714458efc5da42a4c4626f729addc,
-      type: 3}
-  - _id: 4
-    _effect: {fileID: 1140728891184422966, guid: bb2b78a0098c5fd41880c3207a8c809d,
-      type: 3}
+  _effectPair: {fileID: 321262497652870372, guid: 6c344462a98a94f8ca883884ebec70a4,
+    type: 3}
   scale: 1
 --- !u!4 &1825189920
 Transform:

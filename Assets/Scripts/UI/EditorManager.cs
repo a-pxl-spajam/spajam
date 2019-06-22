@@ -51,7 +51,7 @@ public class EditorManager : MonoBehaviour
 
   IEnumerator MoveScene(string sceneName)
   {
-    var opt = SceneManager.LoadSceneAsync(sceneName);
+    var opt = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
     opt.allowSceneActivation = false;
     while (opt.progress < 0.88889)
     {
@@ -59,8 +59,7 @@ public class EditorManager : MonoBehaviour
     }
     opt.allowSceneActivation = true;
     PreviewManager.decorations = decorations;
-    Destroy(gameObject);
-    SceneManager.UnloadScene("Editor");
+    GameObject.FindGameObjectWithTag("Info").SetActive(false);
   }
 
 }
