@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Text : IDecoratable
 {
-  Vector3 position;
+  public Vector3 position { get; set; }
 
   public GameObject Create()
   {
