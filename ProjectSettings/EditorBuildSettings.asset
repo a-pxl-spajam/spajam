@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/CameraFunction.unity
-    guid: fb634e4f999d1454fb5a069a6b95385c
+    path: Assets/Scenes/OmochaLabo.unity
+    guid: d2ef6ad40f36d4c56b39892c1fee4a66
   m_configObjects: {}
