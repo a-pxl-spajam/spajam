@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IDecoratable
 {
-  GameObject Create();
+  GameObject Decorate(List<Pair> effectList);
 }

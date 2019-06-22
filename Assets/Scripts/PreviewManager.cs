@@ -5,73 +5,62 @@ using UnityEngine.Serialization;
 
 namespace EffectsPreview
 {
-    public class PreviewManager : MonoBehaviour
+  public class PreviewManager : MonoBehaviour
+  {
+    [SerializeField]
+    private Transform _effectRoot;
+
+    [SerializeField]
+    private List<Pair> _effectPair;
+
+    public List<Pair> EffectPair => _effectPair;
+
+    [SerializeField]
+    private float scale;
+
+    public static List<IDecoratable> decorations;
+
+
+    private static PreviewManager _instance;
+    public static PreviewManager Instance
     {
-        [SerializeField] 
-        private Transform _effectRoot;
-        
-        [SerializeField] 
-        private List<Pair> _effectPair;
-
-        public List<Pair> EffectPair => _effectPair;
-
-        private static PreviewManager _instance;
-        public static PreviewManager Instance
+      get
+      {
+        if (_instance == null)
         {
-            get
-            {
-                if (_instance == null)
-                {
-                    _instance = new GameObject("PreviewManager").AddComponent<PreviewManager>();
-                }
-                return _instance;
-            }
+          _instance = new GameObject("PreviewManager").AddComponent<PreviewManager>();
         }
-
-        private void Awake()
-        {
-            if (_instance == null)
-            {
-                _instance = this;
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
-        }
-
-        public void Init(List<IDecoratable> decorations)
-        {
-            decorations.ForEach(decoration =>
-            {
-                // idをもとにEffectのprefabを返す
-                var obj = decoration.Decorate();
-                print(obj);
-                if (obj != null)
-                {
-                    var deco = Instantiate(obj, _effectRoot);
-                }
-            });
-        }
-        
+        return _instance;
+      }
     }
 
-    [System.Serializable]
-    public class Pair
+    private void Awake()
     {
-        [SerializeField]
-        private int _id;
-        [SerializeField]
-        private GameObject _effect;
-
-        public int Id
-        {
-            get { return _id; }
-        }
-
-        public GameObject Effect
-        {
-            get { return _effect; }
-        }
+      if (_instance == null)
+      {
+        _instance = this;
+      }
+      else
+      {
+        Destroy(gameObject);
+      }
     }
+
+    private void Start()
+    {
+      decorations.ForEach(decoration =>
+      {
+        // idをもとにEffectのprefabを返す
+        var obj = decoration.Decorate(_effectPair);
+        obj.transform.position *= scale;
+        obj.transform.position += _effectRoot.position;
+      });
+    }
+
+    public void Init(List<IDecoratable> decorations)
+    {
+    }
+
+  }
+
 }

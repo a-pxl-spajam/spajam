@@ -7,6 +7,9 @@ using UnityEngine.EventSystems;
 public class Cracker : DecorateObj, IDragHandler, IDropHandler
 {
 
+  [SerializeField]
+  int id;
+
   Particle particle;
 
 
@@ -27,7 +30,7 @@ public class Cracker : DecorateObj, IDragHandler, IDropHandler
     pos.z = pos.y;
     pos.y = 0;
     pos = Vector3.Scale(pos, new Vector3(1 / cake.rect.width, 0, 1 / cake.rect.height));
-    particle.position = pos;
+    particle.Position = pos;
   }
 
   public void OnDrop(PointerEventData data)
@@ -41,7 +44,7 @@ public class Cracker : DecorateObj, IDragHandler, IDropHandler
 
   public override IDecoratable GetDecoratable()
   {
-    particle = new Particle();
+    particle = new Particle(id, Vector3.zero, 0);
     return this.particle;
   }
 }
