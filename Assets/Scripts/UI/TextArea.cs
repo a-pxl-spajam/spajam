@@ -29,7 +29,7 @@ public class TextArea : DecorateObj, IDragHandler, IDropHandler
     pos.z = pos.y;
     pos.y = 0;
     pos = Vector3.Scale(pos, new Vector3(1 / cake.rect.width, 0, 1 / cake.rect.height));
-    text.position = pos;
+    text.Position = pos;
     var inputFields = Info.instance.GetPosInputFields();
     string x, y, z;
     var localPos = (transform.localPosition - baseLocalPos);
@@ -43,6 +43,7 @@ public class TextArea : DecorateObj, IDragHandler, IDropHandler
     var canvasSize = (transform.parent as RectTransform).rect.size;
     if (canvasSize.y * 0.3f > transform.localPosition.y + canvasSize.y / 2)
     {
+      EditorManager.instance.Remove(text);
       Destroy(gameObject);
     }
   }

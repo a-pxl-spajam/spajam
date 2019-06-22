@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using EffectsPreview;
 
 public class EditorManager : MonoBehaviour
 {
@@ -30,6 +32,8 @@ public class EditorManager : MonoBehaviour
 
   private List<IDecoratable> decorations = new List<IDecoratable>();
 
+  public GameObject Canvas { get; private set; }
+
   void Start()
   {
     if (instance != null) Destroy(this);
@@ -40,6 +44,30 @@ public class EditorManager : MonoBehaviour
   public void Push(IDecoratable decoration)
   {
     decorations.Add(decoration);
+  }
+
+  public void Remove(IDecoratable decoration)
+  {
+    decorations.Remove(decoration);
+  }
+
+  public void MovePreview()
+  {
+    StartCoroutine(MoveScene("EffectPreview"));
+  }
+
+  IEnumerator MoveScene(string sceneName)
+  {
+    var opt = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+    opt.allowSceneActivation = false;
+    Canvas = Canvas ? Canvas : GameObject.FindGameObjectWithTag("Info");
+    Canvas.SetActive(false);
+    while (opt.progress < 0.88889)
+    {
+      yield return null;
+    }
+    opt.allowSceneActivation = true;
+    PreviewManager.decorations = decorations;
   }
 
 }

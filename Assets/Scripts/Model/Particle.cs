@@ -4,12 +4,30 @@ using UnityEngine;
 
 public class Particle : IDecoratable
 {
-  public Vector3 position { get; set; }
-  public float rotate { get; set; }
+  private int id;
+  private float rotate;
 
-  public GameObject Create()
+  public int Id => id;
+  public Vector3 Position { get; set; }
+  public float Rotate { get; set; }
+
+  public Particle(int id, Vector3 pos, float rotate)
   {
-    return null;
+    this.id = id;
+    this.Position = pos;
+    this.Rotate = rotate;
   }
 
+  public GameObject Decorate(List<Pair> effectList)
+  {
+    var eff = effectList.Find(x => x.Id == id);
+    if (eff != null)
+    {
+      return GameObject.Instantiate(eff.Effect, this.Position, Quaternion.Euler(0, -1 * this.Rotate, 0));
+    }
+    else
+    {
+      return null;
+    }
+  }
 }

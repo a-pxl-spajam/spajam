@@ -1,12 +1,13 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class Text : IDecoratable
 {
-  public Vector3 position { get; set; }
+  private int id;
+  public Vector3 Position { get; set; }
 
-  public GameObject Create()
+  public GameObject Decorate(List<Pair> effectList)
   {
-    return null;
+    throw new System.NotImplementedException();
   }
-
 }
