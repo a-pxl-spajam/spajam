@@ -23,10 +23,7 @@
     <option name="FILTER_BY_CURRENT_PROJECT" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65b71c6f-d8ed-48b6-bb55-38f474647aa6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/EffectPreview.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/EffectPreview.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
-    </list>
+    <list default="true" id="65b71c6f-d8ed-48b6-bb55-38f474647aa6" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,14 +31,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5478142">
+    <splitter split-orientation="horizontal" split-proportion="0.4918033">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Assets/Scripts/PreviewManager.cs">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="420">
-                  <caret line="34" column="33" lean-forward="true" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
+                  <caret line="34" column="32" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
                   <folding>
                     <marker date="1561224281158" expanded="true" signature="6:111" ph="..." />
                     <marker date="1561224281158" expanded="true" signature="137:1740" ph="{...}" />
@@ -70,8 +67,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Assets/Scripts/TestPreviewManager.cs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="300">
-                  <caret line="54" column="51" selection-start-line="54" selection-start-column="51" selection-end-line="54" selection-end-column="51" />
+                <state relative-caret-position="420">
+                  <caret line="28" column="2" selection-start-line="28" selection-start-column="2" selection-end-line="28" selection-end-column="2" />
                   <folding>
                     <marker date="1561223731712" expanded="true" signature="6:219" ph="..." />
                     <marker date="1561223731712" expanded="true" signature="282:852" ph="{...}" />
@@ -190,12 +187,12 @@
       <updated>1561198356711</updated>
       <workItem from="1561198363246" duration="31000" />
       <workItem from="1561198619252" duration="11000" />
-      <workItem from="1561198735010" duration="20422000" />
+      <workItem from="1561198735010" duration="20677000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20464000" />
+    <option name="totallyTimeSpent" value="20719000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -275,29 +272,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/TestPreviewManager.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="54" column="51" selection-start-line="54" selection-start-column="51" selection-end-line="54" selection-end-column="51" />
-          <folding>
-            <marker date="1561223731712" expanded="true" signature="6:219" ph="..." />
-            <marker date="1561223731712" expanded="true" signature="282:852" ph="{...}" />
-            <marker date="1561223731712" expanded="true" signature="336:850" ph="{...}" />
-            <marker date="1561223731712" expanded="true" signature="435:800" ph="{...}" />
-            <marker date="1561223731712" expanded="true" signature="514:729" ph="{...}" />
-            <marker date="1561223731712" expanded="true" signature="823:844" ph="{...}" />
-            <marker date="1561223731712" expanded="true" signature="890:1496" ph="{...}" />
-            <marker date="1561223731712" expanded="true" signature="1126:1219" ph="{...}" />
-            <marker date="1561223731712" expanded="true" signature="1257:1494" ph="{...}" />
-            <marker date="1561223731712" expanded="true" signature="1498:1750" ph="/* public class Text : IDecoratable ... */" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/PreviewManager.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
-          <caret line="34" column="33" lean-forward="true" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
+          <caret line="34" column="32" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
           <folding>
             <marker date="1561224281158" expanded="true" signature="6:111" ph="..." />
             <marker date="1561224281158" expanded="true" signature="137:1740" ph="{...}" />
@@ -314,6 +292,25 @@
             <marker date="1561224281158" expanded="true" signature="1450:1738" ph="{...}" />
             <marker date="1561224281158" expanded="true" signature="1590:1642" ph="{...}" />
             <marker date="1561224281158" expanded="true" signature="1676:1732" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/TestPreviewManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="2" selection-start-line="28" selection-start-column="2" selection-end-line="28" selection-end-column="2" />
+          <folding>
+            <marker date="1561223731712" expanded="true" signature="6:219" ph="..." />
+            <marker date="1561223731712" expanded="true" signature="282:852" ph="{...}" />
+            <marker date="1561223731712" expanded="true" signature="336:850" ph="{...}" />
+            <marker date="1561223731712" expanded="true" signature="435:800" ph="{...}" />
+            <marker date="1561223731712" expanded="true" signature="514:729" ph="{...}" />
+            <marker date="1561223731712" expanded="true" signature="823:844" ph="{...}" />
+            <marker date="1561223731712" expanded="true" signature="890:1496" ph="{...}" />
+            <marker date="1561223731712" expanded="true" signature="1126:1219" ph="{...}" />
+            <marker date="1561223731712" expanded="true" signature="1257:1494" ph="{...}" />
+            <marker date="1561223731712" expanded="true" signature="1498:1750" ph="/* public class Text : IDecoratable ... */" />
           </folding>
         </state>
       </provider>
