@@ -4,18 +4,19 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class Cracker : DecorateObj, IDragHandler, IDropHandler
+public class TextArea : DecorateObj, IDragHandler, IDropHandler
 {
 
-  Particle particle;
-
+  Text text;
 
   void Start()
   {
+
   }
 
   void Update()
   {
+
   }
 
   public void OnDrag(PointerEventData data)
@@ -27,7 +28,9 @@ public class Cracker : DecorateObj, IDragHandler, IDropHandler
     pos.z = pos.y;
     pos.y = 0;
     pos = Vector3.Scale(pos, new Vector3(1 / cake.rect.width, 0, 1 / cake.rect.height));
-    particle.position = pos;
+    text.position = pos;
+
+
   }
 
   public void OnDrop(PointerEventData data)
@@ -41,7 +44,8 @@ public class Cracker : DecorateObj, IDragHandler, IDropHandler
 
   public override IDecoratable GetDecoratable()
   {
-    particle = new Particle();
-    return this.particle;
+    text = new Text();
+    return text;
   }
+
 }

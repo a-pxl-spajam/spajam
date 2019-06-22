@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Particle : IDecoratable
 {
-  private Vector3 position;
-  private float rotate;
+  public Vector3 position { get; set; }
+  public float rotate { get; set; }
 
   public GameObject Create()
   {
