@@ -23,7 +23,7 @@ public class Particle : IDecoratable
     var eff = effectList.Find(x => x.Id == id);
     if (eff != null)
     {
-      return GameObject.Instantiate(eff.Effect, this.Position, Quaternion.Euler(0, this.Rotate, 0));
+      return GameObject.Instantiate(eff.Effect, this.Position, Quaternion.Euler(0, -1 * this.Rotate, 0));
     }
     else
     {

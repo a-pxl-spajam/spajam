@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
+using UnityEngine.SceneManagement;
 
 namespace EffectsPreview
 {
@@ -20,6 +20,7 @@ namespace EffectsPreview
 
     public static List<IDecoratable> decorations;
 
+    public List<GameObject> particles = new List<GameObject>();
 
     private static PreviewManager _instance;
     public static PreviewManager Instance
@@ -54,11 +55,31 @@ namespace EffectsPreview
         var obj = decoration.Decorate(_effectPair.EffectPair);
         obj.transform.position *= scale;
         obj.transform.position += _effectRoot.position;
+        particles.Add(obj);
       });
     }
 
     public void Init(List<IDecoratable> decorations)
     {
+    }
+
+    public void MoveEditor()
+    {
+      StartCoroutine(MoveScene("EffectPreview"));
+      particles.ForEach(x => Destroy(x));
+      particles.Clear();
+    }
+
+    IEnumerator MoveScene(string sceneName)
+    {
+      var opt = SceneManager.UnloadSceneAsync(sceneName);
+      opt.allowSceneActivation = false;
+      EditorManager.instance.Canvas.SetActive(true);
+      while (opt.progress < 0.88889)
+      {
+        yield return null;
+      }
+      opt.allowSceneActivation = true;
     }
 
   }
