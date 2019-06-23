@@ -17,6 +17,7 @@ public class Cracker : DecorateObj, IDragHandler, IDropHandler, IPointerDownHand
 
   void Start()
   {
+    particle = new Particle(id, Vector3.zero, 0);
     baseLocalPos = GetComponent<RectTransform>().localPosition;
   }
 

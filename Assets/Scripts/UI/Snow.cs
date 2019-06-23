@@ -14,6 +14,7 @@ public class Snow: DecorateObj, IDragHandler, IDropHandler
 
   void Start()
   {
+    particle = new Particle(id, Vector3.zero, 0);
     baseLocalPos = GetComponent<RectTransform>().localPosition;
   }
 
