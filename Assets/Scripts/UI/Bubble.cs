@@ -33,12 +33,6 @@ public class Bubble: DecorateObj, IDragHandler, IDropHandler
     pos.y = 0;
     pos = Vector3.Scale(pos, new Vector3(1 / cake.rect.width, 0, 1 / cake.rect.height));
     particle.Position = pos;
-    var inputFields = Info.instance.GetPosInputFields();
-    string x, y, z;
-    var localPos = (transform.localPosition - baseLocalPos);
-    inputFields[0].text = "" + localPos.x;
-    inputFields[1].text = "" + localPos.y;
-    inputFields[2].text = "" + localPos.z;
   }
 
   public void OnDrop(PointerEventData data)

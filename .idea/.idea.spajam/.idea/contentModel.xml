@@ -7,6 +7,8 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
+          <e p="ARManager.cs" t="Include" />
+          <e p="ChangeColor.cs" t="Include" />
           <e p="EffectList.cs" t="Include" />
           <e p="Model" t="Include">
             <e p="IDecoratable.cs" t="Include" />
@@ -26,6 +28,7 @@
             <e p="Hanabi.cs" t="Include" />
             <e p="Heart.cs" t="Include" />
             <e p="Info.cs" t="Include" />
+            <e p="Message.cs" t="Include" />
             <e p="ShowingDelayValue.cs" t="Include" />
             <e p="Snow.cs" t="Include" />
             <e p="Star.cs" t="Include" />
@@ -33,7 +36,58 @@
           </e>
         </e>
         <e p="Shaders" t="Include">
+          <e p="Message.shader" t="Include" />
           <e p="Particle Add.shader" t="Include" />
+          <e p="UnlitShader.shader" t="Include" />
+        </e>
+        <e p="StreamingAssets" t="Include">
+          <e p="Vuforia" t="Include">
+            <e p="sample.xml" t="Include" />
+          </e>
+        </e>
+        <e p="Vuforia" t="Include">
+          <e p="Databases" t="Include">
+            <e p="Emulator" t="Include">
+              <e p="VuforiaEmulator.xml" t="Include" />
+            </e>
+          </e>
+          <e p="Editor" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="OpenSourceInitializer.cs" t="Include" />
+              <e p="VuforiaEditorScripts.asmdef" t="Include" />
+            </e>
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="BoundingBoxRenderer.cs" t="Include" />
+            <e p="DefaultInitializationErrorHandler.cs" t="Include" />
+            <e p="DefaultModelRecoEventHandler.cs" t="Include" />
+            <e p="DefaultTrackableEventHandler.cs" t="Include" />
+            <e p="Internal" t="Include">
+              <e p="RuntimeOpenSourceInitializer.cs" t="Include" />
+            </e>
+            <e p="VuforiaScripts.asmdef" t="Include" />
+          </e>
+          <e p="Shaders" t="Include">
+            <e p="BrightTexture.shader" t="Include" />
+            <e p="CameraDiffuse.shader" t="Include" />
+            <e p="ClippingMask.shader" t="Include" />
+            <e p="ColoredLines.shader" t="Include" />
+            <e p="DepthContour.shader" t="Include" />
+            <e p="DepthMask.shader" t="Include" />
+            <e p="OutlineOpaque.shader" t="Include" />
+            <e p="Text3D.shader" t="Include" />
+            <e p="VertexLitWithZ.shader" t="Include" />
+            <e p="VideoBackground.shader" t="Include" />
+          </e>
+        </e>
+        <e p="vuforia-sdk-ios-8-3-8" t="Include">
+          <e p="licenses" t="Include">
+            <e p="license_3rdpartynotice.txt" t="Include" />
+          </e>
+          <e p="readme.txt" t="Include" />
+          <e p="samples" t="Include">
+            <e p="readme.txt" t="Include" />
+          </e>
         </e>
       </e>
       <e p="Library" t="ExcludeRecursive" />
@@ -43,6 +97,8 @@
       <e p="Temp" t="ExcludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
       </e>
+      <e p="VuforiaEditorScripts.csproj" t="IncludeRecursive" />
+      <e p="VuforiaScripts.csproj" t="IncludeRecursive" />
     </e>
   </component>
 </project>
