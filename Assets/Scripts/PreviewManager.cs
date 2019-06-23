@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Photon.Realtime;
+using Photon.Pun;
 
 namespace EffectsPreview
 {
-  public class PreviewManager : MonoBehaviour
+  public class PreviewManager : MonoBehaviourPunCallbacks, IPunObservable
   {
     [SerializeField]
     private Transform _effectRoot;
@@ -59,6 +61,14 @@ namespace EffectsPreview
       });
     }
 
+    void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
+      if(stream.IsWriting) {
+        stream.SendNext(decorations.ToArray());
+      } else {
+        decorations = new List<IDecoratable>( (IDecoratable[])stream.ReceiveNext() );
+      }
+    }
+
     public void Init(List<IDecoratable> decorations)
     {
     }
@@ -66,14 +76,14 @@ namespace EffectsPreview
     public void MoveEditor()
     {
       StartCoroutine(MoveScene("EffectPreview"));
-      particles.ForEach(x => Destroy(x));
+      particles.ForEach(x => PhotonNetwork.Destroy(x));
       particles.Clear();
     }
 
     public void MoveAR()
     {
       StartCoroutine(MoveARScene());
-      particles.ForEach(x => Destroy(x));
+      particles.ForEach(x => PhotonNetwork.Destroy(x));
       particles.Clear();
     }
 
@@ -103,5 +113,4 @@ namespace EffectsPreview
     }
 
   }
-
 }

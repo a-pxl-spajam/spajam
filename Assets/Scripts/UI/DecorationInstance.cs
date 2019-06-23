@@ -25,7 +25,8 @@ public class DecorationInstance : MonoBehaviourPunCallbacks
 
   void Instance()
   {
-    var instance = PhotonNetwork.Instantiate(decoration, instancePoint.position, Quaternion.identity) as DecorateObj;
+    var obj = PhotonNetwork.Instantiate("UI/" + decoration.transform.gameObject.name.Replace("(Clone)", ""), instancePoint.position, Quaternion.identity);
+    var instance = obj.GetComponent<DecorateObj>();
     instance.transform.parent = instancePoint.parent;
     EditorManager.instance.Push(instance.GetDecoratable());
 

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using Photon.Pun;
+using Photon.Realtime;
 
 public class Cracker : DecorateObj, IDragHandler, IDropHandler, IPointerDownHandler
 {
@@ -42,7 +44,7 @@ public class Cracker : DecorateObj, IDragHandler, IDropHandler, IPointerDownHand
     if (canvasSize.y * 0.3f > transform.localPosition.y + canvasSize.y / 2)
     {
       EditorManager.instance.Remove(particle);
-      Destroy(gameObject);
+      PhotonNetwork.Destroy(gameObject);
     }
   }
 

@@ -1,6 +1,8 @@
 using UnityEngine;
+using Photon.Pun;
+using Photon.Realtime;
 
-public abstract class DecorateObj : MonoBehaviour
+public abstract class DecorateObj : MonoBehaviourPunCallbacks
 {
 
   public abstract IDecoratable GetDecoratable();
