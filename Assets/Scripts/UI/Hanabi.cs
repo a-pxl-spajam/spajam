@@ -15,6 +15,7 @@ public class Hanabi : DecorateObj, IDragHandler, IDropHandler
   void Start()
   {
     particle = new Particle(id, Vector3.zero, 0);
+    transform.parent = GameObject.FindWithTag("Info").transform;
     baseLocalPos = GetComponent<RectTransform>().localPosition;
   }
 

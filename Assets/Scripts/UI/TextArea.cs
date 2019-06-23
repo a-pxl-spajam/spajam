@@ -12,6 +12,7 @@ public class TextArea : DecorateObj, IDragHandler, IDropHandler
   void Start()
   {
     baseLocalPos = GetComponent<RectTransform>().localPosition;
+    transform.parent = GameObject.FindWithTag("Info").transform;
   }
 
   void Update()
