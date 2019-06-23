@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
+using Photon.Realtime;
 
 [RequireComponent(typeof(Button))]
-public class DecorationInstance : MonoBehaviour
+public class DecorationInstance : MonoBehaviourPunCallbacks
 {
 
   [SerializeField]
@@ -23,7 +25,7 @@ public class DecorationInstance : MonoBehaviour
 
   void Instance()
   {
-    var instance = Instantiate(decoration, instancePoint.position, Quaternion.identity) as DecorateObj;
+    var instance = PhotonNetwork.Instantiate(decoration, instancePoint.position, Quaternion.identity) as DecorateObj;
     instance.transform.parent = instancePoint.parent;
     EditorManager.instance.Push(instance.GetDecoratable());
 

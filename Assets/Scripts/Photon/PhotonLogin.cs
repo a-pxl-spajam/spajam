@@ -10,7 +10,7 @@ public class PhotonLogin : MonoBehaviourPunCallbacks
 
     [SerializeField] private GameObject player;
     private AlphaChanging alphaChanging;
-/* 
+
     void Start()
     {
         alphaChanging = GameObject.FindObjectOfType<AlphaChanging>();
@@ -18,6 +18,5 @@ public class PhotonLogin : MonoBehaviourPunCallbacks
             PhotonNetwork.Instantiate(player.name, Vector3.zero, Quaternion.identity, 0);
         }
     }
-    */
 }
 

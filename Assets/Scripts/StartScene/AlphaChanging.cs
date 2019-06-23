@@ -13,14 +13,13 @@ public class AlphaChanging : MonoBehaviourPunCallbacks
     [SerializeField] private GameObject inputFields;
     [SerializeField] private UnityEngine.UI.Text roomNameText;
     [SerializeField] private GameObject player;
-    private UnityEngine.UI.Image logoImage;
+    [SerializeField] private UnityEngine.UI.Image logoImage;
     private string roomName;
     private bool isCreatingRoom;
 
     void Start()
     {
         DontDestroyOnLoad(this.gameObject);
-        logoImage = GetComponent<UnityEngine.UI.Image>();
         StartCoroutine(Splash());
     }
 
@@ -79,6 +78,7 @@ public class AlphaChanging : MonoBehaviourPunCallbacks
     // completed connecting room
     public override void OnJoinedRoom() {
         SceneManager.LoadScene("Editor");
+        PhotonNetwork.Instantiate(player.name, Vector3.zero, Quaternion.identity, 0);
     }
 
     public bool GetIsCreatingRoom() {
