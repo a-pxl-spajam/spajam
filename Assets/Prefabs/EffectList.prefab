@@ -73,3 +73,9 @@ MonoBehaviour:
   - _id: 10
     _effect: {fileID: 4399335488015528835, guid: 42510e1e594825e46b8d17084f8abdc3,
       type: 3}
+  - _id: 11
+    _effect: {fileID: 415314804045355483, guid: 7cc980c1d5cb0ea4e96f7854821890e6,
+      type: 3}
+  - _id: 12
+    _effect: {fileID: 2760301451617465057, guid: 8d053223a6998a7409a491f0add4a65b,
+      type: 3}
