@@ -84,6 +84,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1738092230197313030}
   - component: {fileID: 5177653156851065505}
+  - component: {fileID: 1475392360}
   m_Layer: 5
   m_Name: BlueCracker
   m_TagString: Untagged
@@ -100,7 +101,7 @@ RectTransform:
   m_GameObject: {fileID: 5502031981711541094}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3433284, y: 1.343328, z: 1.343328}
   m_Children:
   - {fileID: 3709976725553775111}
   m_Father: {fileID: 0}
@@ -128,6 +129,25 @@ MonoBehaviour:
   rotValue: 0
   baseLocalPos: {x: 0, y: 0, z: 0}
   id: 2
+--- !u!95 &1475392360
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5502031981711541094}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 909581701b7d043e2a10eb274ca4a7d7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6851870505013041364
 GameObject:
   m_ObjectHideFlags: 0
