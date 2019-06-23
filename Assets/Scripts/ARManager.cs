@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Vuforia;
 
 public class ARManager : MonoBehaviour
 {
@@ -51,6 +52,7 @@ public class ARManager : MonoBehaviour
   {
     var opt = SceneManager.UnloadSceneAsync(sceneName);
     opt.allowSceneActivation = false;
+    Destroy(GameObject.FindObjectOfType<ImageTargetBehaviour>().gameObject);
     EditorManager.instance.Canvas.SetActive(true);
     while (opt.progress < 0.88889)
     {
