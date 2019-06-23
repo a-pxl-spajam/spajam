@@ -13,6 +13,7 @@ public class AlphaChanging : MonoBehaviourPunCallbacks
     [SerializeField] private GameObject inputFields;
     [SerializeField] private UnityEngine.UI.Text roomNameText;
     [SerializeField] private GameObject player;
+    [SerializeField] private GameObject otherPlayer;
     [SerializeField] private UnityEngine.UI.Image logoImage;
     private string roomName;
     private bool isCreatingRoom;
@@ -60,14 +61,8 @@ public class AlphaChanging : MonoBehaviourPunCallbacks
     public void OnClickedOKButton() {
         roomName = roomNameText.text;
         inputFields.SetActive(false);
-        
-        // つくる側
-        if(isCreatingRoom) {
-            PhotonNetwork.ConnectUsingSettings();
-        // 参加する側
-        } else {
+        PhotonNetwork.ConnectUsingSettings();
 
-        }
     }
 
     // complated connecting master server
@@ -77,8 +72,14 @@ public class AlphaChanging : MonoBehaviourPunCallbacks
 
     // completed connecting room
     public override void OnJoinedRoom() {
-        SceneManager.LoadScene("Editor");
-        PhotonNetwork.Instantiate(player.name, Vector3.zero, Quaternion.identity, 0);
+        if(isCreatingRoom) {
+            SceneManager.LoadScene("Editor");
+            PhotonNetwork.Instantiate(player.name, Vector3.zero, Quaternion.identity, 0);
+        } else {
+            SceneManager.LoadScene("AR");
+            PhotonNetwork.Instantiate(otherPlayer.name, Vector3.zero, Quaternion.identity, 0);
+        }
+        
     }
 
     public bool GetIsCreatingRoom() {

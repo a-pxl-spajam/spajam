@@ -1835,6 +1835,8 @@ MonoBehaviour:
   inputFields: {fileID: 1259040595}
   roomNameText: {fileID: 1566107354}
   player: {fileID: 1817953184728712777, guid: 924bdffdd5cde480191e29e6df82c31a, type: 3}
+  otherPlayer: {fileID: 567753869493689598, guid: 1715b4ee4e7474577ae12ea9a20f4feb,
+    type: 3}
   logoImage: {fileID: 1581376896}
 --- !u!114 &2013109805
 MonoBehaviour:

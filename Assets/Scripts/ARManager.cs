@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Vuforia;
+using Photon.Pun;
+using Photon.Realtime;
 
-public class ARManager : MonoBehaviour
+public class ARManager : MonoBehaviourPunCallbacks, IPunObservable
 {
 
   public static ARManager instance;
@@ -41,10 +43,18 @@ public class ARManager : MonoBehaviour
     });
   }
 
+    void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
+      if(stream.IsWriting) {
+        stream.SendNext(decorations.ToArray());
+      } else {
+        decorations = new List<IDecoratable>( (IDecoratable[])stream.ReceiveNext() );
+      }
+    }
+
   public void MoveEditor()
   {
     StartCoroutine(MoveScene("AR"));
-    particles.ForEach(x => Destroy(x));
+    particles.ForEach(x => PhotonNetwork.Destroy(x));
     particles.Clear();
   }
 
@@ -52,7 +62,7 @@ public class ARManager : MonoBehaviour
   {
     var opt = SceneManager.UnloadSceneAsync(sceneName);
     opt.allowSceneActivation = false;
-    Destroy(GameObject.FindObjectOfType<ImageTargetBehaviour>().gameObject);
+    PhotonNetwork.Destroy(GameObject.FindObjectOfType<ImageTargetBehaviour>().gameObject);
     EditorManager.instance.Canvas.SetActive(true);
     while (opt.progress < 0.88889)
     {
