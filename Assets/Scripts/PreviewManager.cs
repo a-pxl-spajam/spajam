@@ -70,6 +70,13 @@ namespace EffectsPreview
       particles.Clear();
     }
 
+    public void MoveAR()
+    {
+      StartCoroutine(MoveARScene());
+      particles.ForEach(x => Destroy(x));
+      particles.Clear();
+    }
+
     IEnumerator MoveScene(string sceneName)
     {
       var opt = SceneManager.UnloadSceneAsync(sceneName);
@@ -80,6 +87,19 @@ namespace EffectsPreview
         yield return null;
       }
       opt.allowSceneActivation = true;
+    }
+
+    IEnumerator MoveARScene()
+    {
+      var opt = SceneManager.LoadSceneAsync("AR", LoadSceneMode.Additive);
+      SceneManager.UnloadSceneAsync("EffectPreview");
+      opt.allowSceneActivation = false;
+      while (opt.progress < 0.88889)
+      {
+        yield return null;
+      }
+      opt.allowSceneActivation = true;
+      ARManager.decorations = decorations;
     }
 
   }

@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EffectPreview.unity
     guid: 476410315b6ad084897d80d53be0eb92
+  - enabled: 1
+    path: Assets/Scenes/AR.unity
+    guid: 49c29791ce5e14117a7a671f9b72d350
   m_configObjects: {}
