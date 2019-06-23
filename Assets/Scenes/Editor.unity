@@ -499,6 +499,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScrollView
       objectReference: {fileID: 0}
+    - target: {fileID: 6776863904205585647, guid: ab413b20f11dd4033b7ce47cdaf28f88,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6776863904205585632, guid: ab413b20f11dd4033b7ce47cdaf28f88,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2239,7 +2244,7 @@ PrefabInstance:
     - target: {fileID: 5125768008037348901, guid: ed0de6d1f7c0a4af5ad83c15d9939a9b,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5125768008037348901, guid: ed0de6d1f7c0a4af5ad83c15d9939a9b,
         type: 3}
