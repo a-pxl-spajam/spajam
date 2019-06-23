@@ -53,3 +53,23 @@ MonoBehaviour:
   - _id: 3
     _effect: {fileID: 4074570773753328508, guid: 84a6bea2175e24f9badc4f33492292d3,
       type: 3}
+  - _id: 4
+    _effect: {fileID: 4161942154621827452, guid: b02438646d9e44ac791ee57432db33ee,
+      type: 3}
+  - _id: 5
+    _effect: {fileID: 1692883876216150693, guid: 5a1714458efc5da42a4c4626f729addc,
+      type: 3}
+  - _id: 6
+    _effect: {fileID: 115032, guid: c4c676882c56a429b9fb9b5130f39f8a, type: 3}
+  - _id: 7
+    _effect: {fileID: 6750183921091498438, guid: 1aa9dba515f526444a7e9dfff6be708a,
+      type: 3}
+  - _id: 8
+    _effect: {fileID: 2139811068742692327, guid: a8715cc4574a7274da0fa3559a3b3f8a,
+      type: 3}
+  - _id: 9
+    _effect: {fileID: 1720869730727034422, guid: 7dfc233c047f33a439fb4f17e9aa1114,
+      type: 3}
+  - _id: 10
+    _effect: {fileID: 4399335488015528835, guid: 42510e1e594825e46b8d17084f8abdc3,
+      type: 3}

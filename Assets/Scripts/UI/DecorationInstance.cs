@@ -27,12 +27,15 @@ public class DecorationInstance : MonoBehaviour
     instance.transform.parent = instancePoint.parent;
     EditorManager.instance.Push(instance.GetDecoratable());
 
-    if(instance is TextArea) {
+    if (instance is TextArea)
+    {
       info.Inactive();
       info.InitTextArea(instance.gameObject);
-    } else if(instance is Cracker) {
+    }
+    else if (instance is Cracker)
+    {
       info.Inactive();
-      info.InitCracker(instance.gameObject);
+      info.InitCracker(instance);
     }
   }
 }

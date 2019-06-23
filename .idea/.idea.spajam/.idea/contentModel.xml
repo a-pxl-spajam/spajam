@@ -7,9 +7,30 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
-          <e p="IDecoratable.cs" t="Include" />
+          <e p="EffectList.cs" t="Include" />
+          <e p="Model" t="Include">
+            <e p="IDecoratable.cs" t="Include" />
+            <e p="Particle.cs" t="Include" />
+            <e p="Text.cs" t="Include" />
+          </e>
+          <e p="Pair.cs" t="Include" />
           <e p="PreviewManager.cs" t="Include" />
           <e p="TestPreviewManager.cs" t="Include" />
+          <e p="UI" t="Include">
+            <e p="Bubble.cs" t="Include" />
+            <e p="Cracker.cs" t="Include" />
+            <e p="DecorateObj.cs" t="Include" />
+            <e p="DecorationInstance.cs" t="Include" />
+            <e p="EditorManager.cs" t="Include" />
+            <e p="Flush.cs" t="Include" />
+            <e p="Hanabi.cs" t="Include" />
+            <e p="Heart.cs" t="Include" />
+            <e p="Info.cs" t="Include" />
+            <e p="ShowingDelayValue.cs" t="Include" />
+            <e p="Snow.cs" t="Include" />
+            <e p="Star.cs" t="Include" />
+            <e p="TextArea.cs" t="Include" />
+          </e>
         </e>
         <e p="Shaders" t="Include">
           <e p="Particle Add.shader" t="Include" />
