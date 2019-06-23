@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class Cracker : DecorateObj, IDragHandler, IDropHandler
+public class Cracker : DecorateObj, IDragHandler, IDropHandler, IPointerDownHandler
 {
 
   [SerializeField]
@@ -29,17 +29,11 @@ public class Cracker : DecorateObj, IDragHandler, IDropHandler
     (transform as RectTransform).position = data.position;
 
     var cake = EditorManager.instance.Cake;
-    var pos = transform.position - cake.position;
+    pos = transform.position - cake.position;
     pos.z = pos.y;
     pos.y = 0;
     pos = Vector3.Scale(pos, new Vector3(1 / cake.rect.width, 0, 1 / cake.rect.height));
     particle.Position = pos;
-    var inputFields = Info.instance.GetPosInputFields();
-    string x, y, z;
-    var localPos = (transform.localPosition - baseLocalPos);
-    inputFields[0].text = "" + localPos.x;
-    inputFields[1].text = "" + localPos.y;
-    inputFields[2].text = "" + localPos.z;
   }
 
   public void OnDrop(PointerEventData data)
@@ -50,6 +44,11 @@ public class Cracker : DecorateObj, IDragHandler, IDropHandler
       EditorManager.instance.Remove(particle);
       Destroy(gameObject);
     }
+  }
+
+  public void OnPointerDown(PointerEventData data)
+  {
+    Info.instance.InitCracker(this);
   }
 
   public override IDecoratable GetDecoratable()
